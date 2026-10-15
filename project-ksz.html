@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#050507" name="theme-color"/>
+<meta content="Kalash Thakkar’s MSc thesis project on 3D CNN-based peculiar-velocity reconstruction, kSZ cosmology, and cross-simulation robustness." name="description"/>
+<title>kSZ Velocity Reconstruction — Kalash Thakkar</title>
+<link href="assets/cosmic-icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="styles.css?v=1.4.1" rel="stylesheet"/>
+<meta content="Kalash Thakkar" data-launch="1" name="author"/><meta content="index, follow, max-image-preview:large" data-launch="1" name="robots"/><meta content="Kalash Thakkar" data-launch="1" property="og:site_name"/><meta content="og-card.jpg" data-launch="1" property="og:image"/><meta content="1200" data-launch="1" property="og:image:width"/><meta content="630" data-launch="1" property="og:image:height"/><meta content="summary_large_image" data-launch="1" name="twitter:card"/><meta content="og-card.jpg" data-launch="1" name="twitter:image"/><link data-launch="1" href="assets/apple-touch-icon.png" rel="apple-touch-icon"/><link data-launch="1" href="site.webmanifest" rel="manifest"/><meta content="kSZ Velocity Reconstruction — Kalash Thakkar" property="og:title"/><meta content="Kalash Thakkar’s MSc thesis project on 3D CNN-based peculiar-velocity reconstruction, kSZ cosmology, and cross-simulation robustness." property="og:description"/><meta content="website" property="og:type"/></head>
+<body class="project-page static-content-page" data-version="1.4.1">
+<a class="skip-link" href="#main">Skip to content</a>
+<canvas aria-hidden="true" id="cosmos"></canvas><div aria-hidden="true" class="grain"></div>
+<header class="site-header" id="top">
+<div class="header-inner">
+<a aria-label="Kalash Thakkar home" class="brand" href="index.html">KALASH<span>.</span></a>
+<nav aria-label="Primary navigation" class="desktop-nav">
+<a href="index.html#research">Research</a>
+<a href="index.html#projects">Projects</a>
+<a href="index.html#journey">Journey</a>
+<a href="index.html#about">About</a>
+<a href="research-notes.html">Notes</a>
+<a href="cv.html">CV</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation" class="menu-button"><span></span><span></span></button>
+</div>
+</header>
+<nav aria-label="Mobile navigation" class="mobile-menu" hidden="" id="mobile-menu">
+<a href="index.html#research">Research</a><a href="index.html#projects">Projects</a><a href="index.html#journey">Journey</a><a href="index.html#about">About</a><a href="research-notes.html">Notes</a><a href="cv.html">CV</a><a href="index.html#contact">Contact</a>
+</nav>
+<main id="main">
+<section class="project-page-hero">
+<div class="section-shell reveal">
+<p class="chapter">MASTER'S THESIS · kSZ · 3D CNN</p>
+<h1>Reconstructing Cosmic Velocities.</h1>
+<p class="project-lede">Can a neural network recover galaxy peculiar velocities from large-scale matter structure—and remain trustworthy when the simulation, resolution and underlying realization change?</p>
+<div class="project-page-meta"><span>IIT Indore</span><span>Supervisor: Dr. Priyanka Singh</span><span>May 2026 — Present</span><span>Current research</span></div>
+</div>
+</section>
+<section class="project-story section-shell">
+<div class="project-story-grid">
+<aside>
+<p class="chapter">ON THIS PAGE</p>
+<nav><a href="#motivation">Motivation</a><a href="#question">Research question</a><a href="#pipeline">Pipeline</a><a href="#robustness">Robustness</a><a href="#status">Current status</a></nav>
+</aside>
+<div class="project-story-content">
+<section class="project-story-block reveal" id="motivation">
+<p class="chapter">01 / MOTIVATION</p>
+<h2>Using motion to read the growth of structure.</h2>
+<p>The kinetic Sunyaev–Zel'dovich effect is sensitive to the line-of-sight motion of ionized matter. As future measurements become increasingly precise, velocity information can become a powerful route into structure growth and the distribution of matter in the Universe.</p>
+<div class="project-equation">ΔT<sub>kSZ</sub> / T<sub>CMB</sub> ∝ − ∫ n<sub>e</sub> v<sub>∥</sub> dl</div>
+<p>This thesis approaches the problem from the reconstruction side: learning the relationship between the matter-density field and halo peculiar velocities, then asking whether that learned mapping remains stable outside the exact simulation setup used for training.</p>
+</section>
+<section class="project-story-block reveal" id="question">
+<p class="chapter">02 / RESEARCH QUESTION</p>
+<h2>Accuracy is not enough if the model only understands one simulation.</h2>
+<p>The central scientific and methodological question is whether a 3D CNN can reconstruct peculiar velocity fields while maintaining useful performance across simulations with different effective resolutions and independently resolved volumes.</p>
+<div class="project-status"><strong>Current focus:</strong> cross-simulation resolution robustness and controlled generalization tests using CAMELS-TNG and public IllustrisTNG simulations.</div>
+</section>
+<section class="project-story-block reveal" id="pipeline">
+<p class="chapter">03 / PIPELINE</p>
+<h2>From simulation volume to reconstructed velocity.</h2>
+<div class="pipeline-large">
+<div><span>01</span><strong>Parse simulation data</strong><p>HDF5 catalogues and volumetric fields.</p></div>
+<div><span>02</span><strong>Prepare density fields</strong><p>Fourier-space smoothing and 3D patch extraction.</p></div>
+<div><span>03</span><strong>Train 3D CNN</strong><p>PyTorch training and evaluation framework.</p></div>
+<div><span>04</span><strong>Benchmark transfer</strong><p>Zel'dovich comparison and cross-simulation testing.</p></div>
+</div>
+<div class="project-placeholder">Project figures will live here once the thesis outputs are ready for public display.<br/>Planned: density slices · predicted velocities · residual maps · cross-resolution comparison.</div>
+</section>
+<section class="project-story-block reveal" id="robustness">
+<p class="chapter">04 / ROBUSTNESS</p>
+<h2>Testing what the network actually learned.</h2>
+<p>A model can look excellent on data that resemble its training set. The more interesting test is whether the reconstruction survives a controlled shift in simulation volume and resolution. That makes robustness itself part of the scientific result, not merely a software detail.</p>
+</section>
+<section class="project-story-block reveal" id="status">
+<p class="chapter">05 / CURRENT STATUS</p>
+<h2>Work in progress.</h2>
+<p>The pipeline, training framework and robustness study are actively being developed. Public plots, repository links and manuscript information will be added only when they are ready to share.</p>
+<div class="detail-grid"><span>PyTorch</span><span>3D CNN</span><span>CAMELS-TNG</span><span>IllustrisTNG</span><span>HDF5</span><span>Fourier smoothing</span></div>
+<p><a class="text-link" href="index.html#projects">← Back to featured research</a></p>
+</section>
+</div>
+</div>
+</section>
+</main>
+<footer><div class="footer-inner"><a class="brand" href="index.html">KALASH<span>.</span></a><p>Cosmology · computation · curiosity</p><p>© <span id="year"></span> Kalash Thakkar</p></div></footer>
+<script src="script.js?v=1.4.1"></script>
+</body></html>

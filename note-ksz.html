@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#050507" name="theme-color"/>
+<meta content="A working research note by Kalash Thakkar on the kinetic Sunyaev–Zel’dovich effect and cosmic velocity reconstruction." name="description"/>
+<title>What does the kSZ effect let us reconstruct? — Kalash Thakkar</title>
+<link href="assets/cosmic-icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="styles.css?v=1.4.1" rel="stylesheet"/>
+<meta content="Kalash Thakkar" data-launch="1" name="author"/><meta content="index, follow, max-image-preview:large" data-launch="1" name="robots"/><meta content="Kalash Thakkar" data-launch="1" property="og:site_name"/><meta content="og-card.jpg" data-launch="1" property="og:image"/><meta content="1200" data-launch="1" property="og:image:width"/><meta content="630" data-launch="1" property="og:image:height"/><meta content="summary_large_image" data-launch="1" name="twitter:card"/><meta content="og-card.jpg" data-launch="1" name="twitter:image"/><link data-launch="1" href="assets/apple-touch-icon.png" rel="apple-touch-icon"/><link data-launch="1" href="site.webmanifest" rel="manifest"/><meta content="What does the kSZ effect let us reconstruct? — Kalash Thakkar" property="og:title"/><meta content="A working research note by Kalash Thakkar on the kinetic Sunyaev–Zel’dovich effect and cosmic velocity reconstruction." property="og:description"/><meta content="website" property="og:type"/></head>
+<body class="static-content-page" data-version="1.4.1">
+<a class="skip-link" href="#main">Skip to content</a>
+<canvas aria-hidden="true" id="cosmos"></canvas><div aria-hidden="true" class="grain"></div>
+<header class="site-header" id="top">
+<div class="header-inner">
+<a aria-label="Kalash Thakkar home" class="brand" href="index.html">KALASH<span>.</span></a>
+<nav aria-label="Primary navigation" class="desktop-nav">
+<a href="index.html#research">Research</a>
+<a href="index.html#projects">Projects</a>
+<a href="index.html#journey">Journey</a>
+<a href="index.html#about">About</a>
+<a href="research-notes.html">Notes</a>
+<a href="cv.html">CV</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation" class="menu-button"><span></span><span></span></button>
+</div>
+</header>
+<nav aria-label="Mobile navigation" class="mobile-menu" hidden="" id="mobile-menu">
+<a href="index.html#research">Research</a><a href="index.html#projects">Projects</a><a href="index.html#journey">Journey</a><a href="index.html#about">About</a><a href="research-notes.html">Notes</a><a href="cv.html">CV</a><a href="index.html#contact">Contact</a>
+</nav>
+<main id="main">
+<article class="note-article">
+<p class="chapter">WORKING NOTE · CMB / kSZ</p>
+<h1>What does the kSZ effect actually let us reconstruct?</h1>
+<p class="note-deck">A compact intuition-first note on why the motion of free electrons leaves a temperature imprint on the CMB—and why that imprint can become a route to cosmic velocity information.</p>
+<div class="note-meta"><span>Draft status: working note</span><span>~6 min outline</span><span>Will be revised as the thesis develops</span></div>
+<div class="note-body">
+<div class="note-callout">This is intentionally marked as a working draft, not a finished publication or research result.</div>
+<h2>The basic idea</h2>
+<p>CMB photons can Thomson-scatter from free electrons that have a bulk peculiar velocity relative to the cosmic rest frame. The resulting Doppler shift produces the kinetic Sunyaev–Zel'dovich signal. Schematically, the temperature fluctuation depends on the free-electron density weighted by the line-of-sight velocity.</p>
+<div class="project-equation">ΔT<sub>kSZ</sub> / T<sub>CMB</sub> ∝ − ∫ n<sub>e</sub> v<sub>∥</sub> dl</div>
+<h2>Why this is interesting</h2>
+<p>The signal is faint, but it contains information that is difficult to obtain from density alone: coherent motion. That makes kSZ-related measurements potentially valuable for understanding the growth of large-scale structure and the velocity field associated with it.</p>
+<h2>Where machine learning enters</h2>
+<p>My thesis explores a related reconstruction problem: can a 3D CNN infer halo peculiar velocities from the surrounding matter-density field, and can that mapping remain robust when the underlying simulation setup changes?</p>
+<h2>The question I care about</h2>
+<p>A high test-set score is not enough if the network only works for one particular simulation or resolution. The more interesting question is whether the reconstructed velocity information is stable across independently resolved volumes.</p>
+<p><a class="text-link" href="research-notes.html">← Back to Research Notes</a></p>
+</div>
+</article>
+</main>
+<footer><div class="footer-inner"><a class="brand" href="index.html">KALASH<span>.</span></a><p>Cosmology · computation · curiosity</p><p>© <span id="year"></span> Kalash Thakkar</p></div></footer>
+<script src="script.js?v=1.4.1"></script>
+</body></html>

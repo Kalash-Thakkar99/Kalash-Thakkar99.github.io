@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#050507" name="theme-color"/>
+<meta content="Research by Kalash Thakkar on graph neural networks for cosmic-web classification and cross-simulation generalization." name="description"/>
+<title>Cosmic Web GNN — Kalash Thakkar</title>
+<link href="assets/cosmic-icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="styles.css?v=1.4.1" rel="stylesheet"/>
+<meta content="Kalash Thakkar" data-launch="1" name="author"/><meta content="index, follow, max-image-preview:large" data-launch="1" name="robots"/><meta content="Kalash Thakkar" data-launch="1" property="og:site_name"/><meta content="og-card.jpg" data-launch="1" property="og:image"/><meta content="1200" data-launch="1" property="og:image:width"/><meta content="630" data-launch="1" property="og:image:height"/><meta content="summary_large_image" data-launch="1" name="twitter:card"/><meta content="og-card.jpg" data-launch="1" name="twitter:image"/><link data-launch="1" href="assets/apple-touch-icon.png" rel="apple-touch-icon"/><link data-launch="1" href="site.webmanifest" rel="manifest"/><meta content="Cosmic Web GNN — Kalash Thakkar" property="og:title"/><meta content="Research by Kalash Thakkar on graph neural networks for cosmic-web classification and cross-simulation generalization." property="og:description"/><meta content="website" property="og:type"/></head>
+<body class="project-page static-content-page" data-version="1.4.1">
+<a class="skip-link" href="#main">Skip to content</a>
+<canvas aria-hidden="true" id="cosmos"></canvas><div aria-hidden="true" class="grain"></div>
+<header class="site-header" id="top">
+<div class="header-inner">
+<a aria-label="Kalash Thakkar home" class="brand" href="index.html">KALASH<span>.</span></a>
+<nav aria-label="Primary navigation" class="desktop-nav">
+<a href="index.html#research">Research</a>
+<a href="index.html#projects">Projects</a>
+<a href="index.html#journey">Journey</a>
+<a href="index.html#about">About</a>
+<a href="research-notes.html">Notes</a>
+<a href="cv.html">CV</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation" class="menu-button"><span></span><span></span></button>
+</div>
+</header>
+<nav aria-label="Mobile navigation" class="mobile-menu" hidden="" id="mobile-menu">
+<a href="index.html#research">Research</a><a href="index.html#projects">Projects</a><a href="index.html#journey">Journey</a><a href="index.html#about">About</a><a href="research-notes.html">Notes</a><a href="cv.html">CV</a><a href="index.html#contact">Contact</a>
+</nav>
+<main id="main">
+<section class="project-page-hero">
+<div class="section-shell reveal">
+<p class="chapter">COSMIC WEB · GRAPH NEURAL NETWORKS</p>
+<h1>Learning the Cosmic Web.</h1>
+<p class="project-lede">Can graph neural networks classify galaxies by cosmic-web environment—and still work when they are moved from one cosmological simulation to another?</p>
+<div class="project-page-meta"><span>Utica University · remote collaboration</span><span>Supervisor: Dr. Unnati Shah</span><span>Aug 2026 — Present</span><span>Current research</span></div>
+</div>
+</section>
+<section class="project-story section-shell">
+<div class="project-story-grid">
+<aside>
+<p class="chapter">ON THIS PAGE</p>
+<nav><a href="#motivation">Motivation</a><a href="#representation">Representation</a><a href="#pipeline">Pipeline</a><a href="#transfer">Transfer</a><a href="#status">Current status</a></nav>
+</aside>
+<div class="project-story-content">
+<section class="project-story-block reveal" id="motivation">
+<p class="chapter">01 / MOTIVATION</p>
+<h2>The cosmic web is naturally relational.</h2>
+<p>Galaxies are not isolated points. Their local and large-scale environments emerge from spatial relationships: filaments, nodes, sheets and voids. Graph neural networks offer a way to represent those relationships directly rather than treating each galaxy independently.</p>
+</section>
+<section class="project-story-block reveal" id="representation">
+<p class="chapter">02 / REPRESENTATION</p>
+<h2>Turn a galaxy catalogue into a graph.</h2>
+<p>The project uses CAMELS catalogues with ground-truth cosmic-web labels produced through a first-principles tidal-tensor (T-web) pipeline. Galaxies become graph nodes, their spatial relationships define edges, and the network learns an environmental classification.</p>
+<div class="project-equation">galaxies → graph geometry → message passing → web environment</div>
+</section>
+<section class="project-story-block reveal" id="pipeline">
+<p class="chapter">03 / PIPELINE</p>
+<h2>Train once. Then change the Universe underneath it.</h2>
+<div class="pipeline-large">
+<div><span>01</span><strong>T-web labels</strong><p>First-principles environment classification.</p></div>
+<div><span>02</span><strong>Build graphs</strong><p>Galaxy nodes and spatial neighborhoods.</p></div>
+<div><span>03</span><strong>Train GNNs</strong><p>EdgeConv / GCN and transformer baselines.</p></div>
+<div><span>04</span><strong>Zero-shot transfer</strong><p>TNG → SIMBA / Astrid.</p></div>
+</div>
+<div class="project-placeholder">Planned public visuals: graph neighborhoods · T-web class maps · confusion matrices · domain-shift comparison.</div>
+</section>
+<section class="project-story-block reveal" id="transfer">
+<p class="chapter">04 / GENERALIZATION</p>
+<h2>Domain shift is the point, not a nuisance.</h2>
+<p>The project explicitly measures degradation when a model trained on TNG is evaluated on SIMBA or Astrid without retraining. Macro F1, MCC and confusion-matrix analysis make the transfer failure—or success—quantifiable.</p>
+<p>TransformerConv and GPSConv architectures are being explored as comparative baselines under the same evaluation protocol.</p>
+</section>
+<section class="project-story-block reveal" id="status">
+<p class="chapter">05 / CURRENT STATUS</p>
+<h2>Architecture and benchmark development are ongoing.</h2>
+<p>The public page currently describes the research design rather than reporting unpublished results. Figures, repository links and any manuscript information will be added when appropriate.</p>
+<div class="detail-grid"><span>PyTorch Geometric</span><span>EdgeConv</span><span>GCN</span><span>TransformerConv</span><span>GPSConv</span><span>T-web</span></div>
+<p><a class="text-link" href="index.html#projects">← Back to featured research</a></p>
+</section>
+</div>
+</div>
+</section>
+</main>
+<footer><div class="footer-inner"><a class="brand" href="index.html">KALASH<span>.</span></a><p>Cosmology · computation · curiosity</p><p>© <span id="year"></span> Kalash Thakkar</p></div></footer>
+<script src="script.js?v=1.4.1"></script>
+</body></html>
