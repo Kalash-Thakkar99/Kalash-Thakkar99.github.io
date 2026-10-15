@@ -918,3 +918,23 @@ footer { padding: 0 var(--pad); border-top: 1px solid var(--line); font-size: .7
   .chapter, .cv-ranks span { color: #7a4f14 !important; }
   a { color: #111 !important; text-decoration: none !important; }
 }
+
+
+/* v1.4.2 — Web3Forms contact states */
+.form-status {
+  min-height: 1.5em;
+  margin: .15rem 0 0;
+  grid-column: 1 / -1;
+  font-size: .82rem;
+  line-height: 1.5;
+  color: #8f8a82;
+}
+
+.form-status.is-sending { color: #aaa49b; }
+.form-status.is-success { color: #b7c7ac; }
+.form-status.is-error { color: #d69d86; }
+
+#contact-submit:disabled {
+  opacity: .6;
+  cursor: wait;
+}

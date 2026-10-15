@@ -1,10 +1,14 @@
-# Kalash Thakkar — Cosmology Portfolio v1.4.1 Launch
+# Kalash Thakkar — Cosmology Portfolio v1.4.2 Launch
 
-Hotfix for the launch build.
+Post-launch GitHub Pages build.
 
-## Fixed
-- Homepage navigation `CV` now opens `cv.html`.
-- Mobile navigation `CV` now opens `cv.html`.
-- Homepage `View CV` button now opens the HTML CV page.
-- CV links on Research Notes and project/note pages now open `cv.html`.
-- Explicit `Download CV` / `Download PDF` actions still open or download the PDF intentionally.
+## Changes
+- Replaced FormSubmit with Web3Forms.
+- Contact form now submits asynchronously without leaving the website.
+- Added in-page Sending / Success / Error states.
+- Added Web3Forms honeypot bot protection.
+- Added final canonical URLs for the live GitHub Pages domain.
+- Added `og:url` and absolute Open Graph / Twitter image URLs.
+- Added `sitemap.xml`.
+- Updated `robots.txt` with the sitemap location.
+- Preserved the HTML CV page, PDF download, projects, notes, performance work, 404 page and social card.

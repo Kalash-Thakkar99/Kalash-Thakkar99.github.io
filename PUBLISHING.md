@@ -1,84 +1,40 @@
-# Publish this site on GitHub Pages
+# Updating the live GitHub Pages site
 
-This package is ready for a static GitHub Pages deployment.
+Live site:
+https://kalash-thakkar99.github.io/
 
-## First-time publishing
+Repository:
+https://github.com/Kalash-Thakkar99/Kalash-Thakkar99.github.io
 
-1. Create a public GitHub repository named exactly:
-   `YOUR-GITHUB-USERNAME.github.io`
+## Update through GitHub Desktop
 
-2. Upload the **contents** of this folder to the repository root.
-   `index.html` should be visible at the top level of the repository.
+1. Replace the files in your local `Kalash-Thakkar99.github.io` repository folder with the files from this v1.4.2 folder.
+2. Open GitHub Desktop.
+3. Review the changed files.
+4. In **Summary**, enter something like:
+   `Update contact form and SEO`
+5. Click **Commit to main**.
+6. Click **Push origin**.
+7. GitHub Pages will redeploy automatically.
 
-3. In the repository, open:
-   **Settings → Pages**
+## Contact form
 
-4. Under **Build and deployment**, choose:
-   - Source: **Deploy from a branch**
-   - Branch: **main**
-   - Folder: **/(root)**
+The site now uses Web3Forms rather than FormSubmit.
 
-5. Save. GitHub will publish the site at:
-   `https://YOUR-GITHUB-USERNAME.github.io/`
+It submits with JavaScript, so visitors stay on the website and see:
+- `Sending…`
+- a success message, or
+- an error message with a direct-email fallback.
 
-The included `.nojekyll` file tells GitHub Pages to serve this as a plain static site.
+The Web3Forms access key is intentionally embedded in the static site. Web3Forms documents access keys as public identifiers intended for browser-side use.
 
-## Activate the contact form
+## SEO
 
-The contact form uses FormSubmit because GitHub Pages cannot run a server-side form backend.
-
-After the site is public:
-1. Open your live website.
-2. Submit one test message through the contact form.
-3. FormSubmit will send an activation email to `kalash.here21@gmail.com`.
-4. Open that email and confirm the form.
-5. Submit another test message to verify delivery.
-
-Until activation, FormSubmit sends activation emails rather than normal form delivery.
-
-## Updating small things later
-
-### Easiest method: GitHub website
-For a small text edit:
-1. Open the relevant file in your repository.
-2. Click the pencil/Edit button.
-3. Make the change.
-4. Click **Commit changes**.
-
-GitHub Pages republishes automatically.
-
-### Better long-term method: Git
-After cloning the repository on your Mac:
-
-```bash
-git add .
-git commit -m "Update research website"
-git push
-```
-
-GitHub Pages republishes after the push.
-
-## Files worth knowing
-
-- `index.html` — homepage
-- `styles.css` — visual styling
-- `script.js` — animations and interactions
-- `cv.html` — web CV
-- `assets/Kalash_CV.pdf` — downloadable CV PDF
-- `project-ksz.html` — kSZ project
-- `project-cosmic-web.html` — Cosmic Web project
-- `research-notes.html` — notes index
-- `note-ksz.html` — first working note
-- `404.html` — custom GitHub Pages error page
-- `og-card.jpg` — social sharing preview
-- `site.webmanifest` — app/site metadata
-
-## After you know the final GitHub Pages URL
-
-A later polish can add:
+This build contains:
 - canonical URLs
 - `og:url`
-- an absolute Open Graph image URL
+- absolute social-card URLs
 - `sitemap.xml`
+- `robots.txt`
 
-Those are URL-dependent, so they are best added after the GitHub username/live URL is known.
+If you later move to a custom domain, these URL-specific files and tags should be updated again.

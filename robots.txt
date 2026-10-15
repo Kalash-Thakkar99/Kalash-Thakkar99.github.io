@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://kalash-thakkar99.github.io/sitemap.xml

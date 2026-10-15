@@ -18,7 +18,7 @@
 
   const lateCosmicImage = new Image();
   lateCosmicImage.decoding = 'async';
-  lateCosmicImage.src = 'cosmic-final-optimized.jpg?v=1.4.1';
+  lateCosmicImage.src = 'cosmic-final-optimized.jpg?v=1.4.2';
 
   const clamp01 = n => Math.max(0, Math.min(1, n));
   const mix = (a, b, t) => a + (b - a) * t;
@@ -958,10 +958,59 @@
 
   const form = document.getElementById('contact-form');
   if (form) {
-    const next = document.getElementById('form-next');
-    const sourceUrl = document.getElementById('form-url');
-    if (next) next.value = new URL('thanks.html', window.location.href).href;
-    if (sourceUrl) sourceUrl.value = window.location.href;
+    const submitButton = document.getElementById('contact-submit');
+    const status = document.getElementById('form-status');
+    const defaultLabel = submitButton?.textContent || 'Send message';
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (status) {
+        status.textContent = 'Sending…';
+        status.className = 'form-status is-sending';
+      }
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+      }
+
+      try {
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || 'Submission failed');
+        }
+
+        form.reset();
+        if (status) {
+          status.textContent = '✓ Message sent successfully. Thank you for reaching out.';
+          status.className = 'form-status is-success';
+        }
+      } catch (error) {
+        console.error('Contact form submission failed:', error);
+        if (status) {
+          status.textContent = 'Could not send your message. Please email me directly instead.';
+          status.className = 'form-status is-error';
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = defaultLabel;
+        }
+      }
+    });
   }
 
   const yearEl = document.getElementById('year');
